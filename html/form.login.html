@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/form.login.css">
+    
+</head>
+
+<body>
+  <button type="button" class="login-btn" onclick="showForm()">Login</button>
+  
+  <!-- Modal -->
+  <div class="modal" id="mdl">
+    <span class="x" onclick="cancelForm()">&times;</span>
+    <form class="modal-content">
+      <div class="img-container">
+        <img src="../res/img/avatar.png" class="avatar">
+      </div>
+      <div class="input-container">
+        
+        <label for="uname"><b>Username 😎</b></label>
+        <input id="uname" name="uname" type="text" placeholder="@username" required>
+        
+        <label for="psw">
+          <b>Password 🤫</b>
+        </label>
+        <input id="psw" type="password" placeholder="*******" required name="psw">
+        
+        <label class="remember"><input type="checkbox" checked name="remember">Remember me 😳</label>
+        <button class="login-btn" type="submit">Login</button>
+      </div>
+      <div class="modal-footer">
+        <span class="fpsw">😰 Forgot <a href="cancelForm()">password </a> 🔐</span>
+        <button class="cancel-btn" type="button" onclick="cancelForm()">Cancel⛔</button>
+      </div>
+    </form>
+  </div>
+  
+  <script src="../js/form.login.js"></script>
+</body>
+
+</html>

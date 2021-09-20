@@ -1,0 +1,8 @@
+media source extension api
+slideshow
+html api
+
+
+//to do
+- automatic slideshow,
+-

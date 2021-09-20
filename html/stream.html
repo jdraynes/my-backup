@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 maxium-scale=1 minimum-scale=1">
+    <title>Video Stream</title>
+    <link rel="stylesheet" href="../css/stream.css">
+</head>
+
+<body>
+  <div class="main-container">
+    <div class="rec-container">
+      <div class="warning" id="warning"><b>Please Enable JavaScript in your Browser and Refresh</b></div>
+      <div class="video-rec">
+      <div class="screen" id="screen">
+        <div class="cover">
+          <img src="../res/img/icons/video-camera.png">
+          <p class="reqClick">Please click or tap on screen to start camera</p>
+        </div>
+        <div class="controls">
+          <button type="button" role="switch" data-recording="false" aria-checked="false" class="record-btn"></button>
+        </div>
+      </div>
+      
+  </div>
+  </div>
+  <div class="video-player">
+    <div class="video">
+      <video class="vdo"></video>
+    </div>
+    <div class="video-controls">
+      <button type="button" class="playpause" id="playpause" role="switch" data-playing="false"><img id="playpause-icon" class="playpause-icon"></button>
+      <button type="button" role="switch" id="mute-unmute-btn" class="mute-unmute-btn" data-mute="false">
+        <img id="mute-unmute-icon" class="mute-unmute-icon">
+      </button>
+      <div class="progress-container">
+        <input id="rangeP" class="rangeP" type="range" min="0" step="any">
+        <!--<progress class="progress" id="progress" value="0" min="0">
+          <div id="progressBar">
+            <span class="progress2" id="progress2"></span>
+          </div>
+        </progress>-->
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="../js/stream.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Audio Player</title>
+</head>
+
+<body>
+  <div class="audio-container">
+    <audio autoplay src="../res/audio/Sami-Zayn-ts.mp3"></audio>
+    <button data-playing="false" role="switch" class="tape-controls-play" aria-checked="false"><span>Play/Pause</span></button>
+    <input type="range" id="volume" max="2" min="1"step="0.01">
+    <input type="range" id="panner" max="1" min="-1" value="0" step="0.1">
+  </div>
+  
+  <script src="../js/audio.js"></script>
+</body>
+
+</html>

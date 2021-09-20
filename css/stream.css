@@ -1,0 +1,282 @@
+*{
+  box-sizing: border-box;
+}
+
+body,html {
+  padding: 0;
+  margin: 0;
+}
+
+.main-container{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  scroll-snap-type: y mandatory;
+}
+
+.rec-container,.video-player{
+  scroll-snap-align: center;
+}
+
+.rec-container{
+  height: 100vh;
+}
+/* Warning */
+
+.warning {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  padding: 1em;
+  width: 100%;
+  z-index: 1;
+  color: whitesmoke;
+  background-color: red;
+  animation: warning 1s linear;
+  animation-fill-mode: backwards;
+}
+
+@keyframes warning{
+  from {
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+/* Video Recorder */
+.video-rec{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+.screen {
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+
+.cover{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 80vh;
+  padding: 1em;
+}
+
+.cover img {
+  align-self: center;
+  margin-top: 40%;
+  width: 40%;
+}
+
+.cover .reqClick {
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.webcam {
+  display: none;
+  width: 100%;
+}
+
+.controls{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  width: 100%;
+  padding: 1em;
+  --recording-background: white;
+  --recording-border: solid red;
+}
+.record-btn{
+  width: 5.2em;
+  height: 5.2em;
+  border-radius: 50%;
+  border: solid white;
+  background: red;
+}
+
+/* Video Player */
+
+.video-player {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  background: greenyellow;
+}
+
+.video{
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  background: black;
+  height: 100%;
+}
+
+.video > video {
+  align-self: center;
+  width: 100%;
+}
+
+.video-controls {
+  position: absolute;
+  top: 100vh;
+  left: 0;
+  display: table;
+  padding: 1em;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  --progress-w : 100%;
+  background: transparent;
+}
+
+.playpause-icon {
+  width: 100%;
+}
+
+.playpause {
+  position: absolute;
+  display: table-cell;
+  bottom: 45%;
+  left: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  border-radius: 50%;
+  width: 20vw;
+  padding: 1em;
+  background: transparent;
+}
+
+.progress-container{
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 .5em;
+  margin-bottom: 3vh;
+  background-color: transparent;
+  --range-hover-transition: height 1s ease-out;
+  --range-height: 100%;
+  --range-width: .6em;
+  --range-thumb-border: solid #B06AB3 10px;
+  --range-thumb-bColor: #B06AB3;
+  --range-thumb-circle: 50%;
+  --range-thumb-transition: height .6s ease-out;
+}
+
+/* Progress bar*/
+.progress{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  align-self: center;
+  width: 100%;
+  height: .3em;
+  color: #4568DC;
+}
+
+
+.progress::-webkit-progress-bar{
+  border-radius: 1em;
+  background-color: #CCCEE2;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+.progress ::-moz-progress-bar{
+  background-image: -moz-linear-gradient(left,#4568DC,#B06AB3);
+  border-radius: 1em;
+  background-size: 100% 100%;
+}
+
+.progress::-webkit-progress-value{
+  background-image: -webkit-linear-gradient(left,#4568DC,#B06AB3);
+  border-radius: .5em;
+}
+
+/* input[type = range] progress bar */
+
+.rangeP {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: .6em;
+  outline: none;
+  border-radius: 1em;
+  transition-duration: .2s;
+  transition-timing-function: ease-out;
+}
+
+.rangeP::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  appearance: none;
+  width: var(--range-width);
+  height: var(--range-height);
+  background-color: var(--range-thumb-bColor);
+  border: var(--range-thumb-border);
+  border-radius: var(--range-thumb-circle);
+  transition: height .6s ease-out;
+  -webkit-transition: var(--range-thumb-transition);
+}
+
+.rangeP::-moz-range-thumb{
+  width: var(--range-width);
+  height: var(--range-height);
+  background-color: var(--range-thumb-bColor);
+  border: var(--range-thumb-border);
+  border-radius: var(--range-thumb-circle);
+}
+
+.rangeP:hover{
+  height: calc(var(--range-width) + .2em);
+}
+
+
+/*Progressbar Fallback*/
+
+
+.progressBar {
+  align-self: center;
+  width: 100%;
+  height: .3em;
+  color: #4568DC;
+  border-radius: 1em;
+  background-color: #CCCEE2;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+.progress2 {
+  background-image: -webkit-linear-gradient(left, #4568DC, #B06AB3);
+  border-radius: .5em;
+}
+
+/* Mute & Unmute btn */
+
+.mute-unmute-btn {
+  position: absolute;
+  right: .4em;
+  top: 2vh;
+  width: 20vw;
+  height: 20vw;
+  padding: 1em;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.mute-unmute-icon {
+  width: 100%;
+  height: 100%;
+  filter: brightness(75%);
+}

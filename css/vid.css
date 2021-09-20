@@ -1,0 +1,16 @@
+*{
+  box-sizing: border-box;
+}
+
+#video-controls{
+  display: none;
+  list-style-type: none;
+}
+
+#video-controls li{
+  float: left;
+}
+
+video {
+  max-width: 100%;
+}
